@@ -6,6 +6,7 @@ const path = require("path");
 
 const exhibitionRoutes = require("./routes/exhibitionRoutes");
 const albumRoutes = require("./routes/albumRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ if (!fs.existsSync(uploadDir)) {
 // Routes
 app.use("/api/exhibitions", exhibitionRoutes);
 app.use("/api/albums", albumRoutes);
+app.use("/api/auth", authRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
